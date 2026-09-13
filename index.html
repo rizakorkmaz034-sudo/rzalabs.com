@@ -182,6 +182,17 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
+        .play-badge {
+            height: 45px;
+            width: auto;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .play-badge:hover {
+            transform: scale(1.05);
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -263,12 +274,11 @@
         <nav>
             <a href="#about">Hakkımızda</a>
             <a href="#projects">Projeler</a>
-            <a href="javascript:void(0)" onclick="openPrivacy()">Minik Kaşif Gizlilik</a>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="badge">🚀 Geleceğin Mobil & Yazılım Teknolojileri</div>
+        <div class="badge">Geleceğin Mobil ve Yazılım Teknolojileri</div>
         <h1>Yenilikçi Yazılım ve Akıllı Mobil Çözümler</h1>
         <p>RZA Labs; yüksek performanslı native Android uygulamaları, modern web platformları ve kullanıcı odaklı dijital deneyimler geliştirir.</p>
         <a href="#projects" class="btn">Projelerimizi Keşfet</a>
@@ -278,15 +288,15 @@
         <h2 class="section-title">Neler Yapıyoruz?</h2>
         <div class="grid">
             <div class="card">
-                <h3>📱 Native Android Geliştirme</h3>
+                <h3>Native Android Geliştirme</h3>
                 <p>Kotlin, Jetpack Compose ve modern mimari kalıpları kullanarak yüksek performanslı, akıcı ve güvenli mobil uygulamalar inşa ediyoruz.</p>
             </div>
             <div class="card">
-                <h3>⚡ Modern Web Teknolojileri</h3>
+                <h3>Modern Web Teknolojileri</h3>
                 <p>Vercel, Cloud mimarileri ve ışık hızında çalışan web altyapıları ile markanızı dijital dünyada en üst sıraya taşıyoruz.</p>
             </div>
             <div class="card">
-                <h3>🛡️ Çocuk & Aile Dostu Yazılımlar</h3>
+                <h3>Çocuk ve Aile Dostu Yazılımlar</h3>
                 <p>Gizliliğe önem veren, güvenli, eğitici ve eğlenceli çocuk uygulamalarıyla geleceğin kaşiflerine güvenli dijital alanlar sunuyoruz.</p>
             </div>
         </div>
@@ -301,13 +311,16 @@
                     <h3>Minik Kaşif</h3>
                 </div>
                 <p>Çocuklar ve aileler için özel olarak tasarlanmış, eğitici ve eğlenceli native Android uygulaması. Kişisel veri toplamayan tam güvenli yapı.</p>
-                <br>
-                <a href="https://play.google.com/apps/testing/com.rzastudio.minikkasif" target="_blank" rel="noopener" class="btn" style="padding: 8px 18px; font-size: 0.85rem; margin-right: 10px;">▶ Play Store</a>
-                <a href="javascript:void(0)" onclick="openPrivacy()" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.9rem;">Gizlilik Politikasını Oku &rarr;</a>
+                <div style="margin-top: 20px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="https://play.google.com/apps/testing/com.rzastudio.minikkasif" target="_blank" rel="noopener">
+                        <img src="play.webp" alt="Google Play'den İndirin" class="play-badge">
+                    </a>
+                    <a href="javascript:void(0)" onclick="openPrivacy()" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.9rem;">Gizlilik Politikasını Oku &rarr;</a>
+                </div>
             </div>
             <div class="card">
-                <span class="badge" style="margin-bottom: 15px;">🔜 Yakında</span>
-                <h3>📻 Radyofil</h3>
+                <span class="badge" style="margin-bottom: 15px;">Yakında</span>
+                <h3>Radyofil</h3>
                 <p>Türkiye'nin dört bir yanından radyo istasyonlarını tek bir uygulamadan dinlemenizi sağlayan basit ve akıcı bir radyo yayın uygulaması.</p>
             </div>
         </div>
@@ -316,7 +329,7 @@
     <!-- Privacy Policy Modal -->
     <div class="modal" id="privacyModal" onclick="if(event.target === this) closePrivacy()">
         <div class="modal-content">
-            <h2>🔒 Minik Kaşif Gizlilik Politikası</h2>
+            <h2>Minik Kaşif Gizlilik Politikası</h2>
             <p><strong>Önemli:</strong> Minik Kaşif, çocuklar ve aileler için tasarlanmıştır. Kullanıcılardan gereksiz kişisel bilgiler talep etmez ve çocukların gizliliğine öncelik verir.</p>
             
             <h4>1. Toplanan Bilgiler</h4>
