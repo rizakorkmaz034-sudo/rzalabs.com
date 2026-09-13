@@ -46,6 +46,10 @@
             font-family: 'Inter', sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-color);
             background-image:
@@ -54,6 +58,7 @@
             background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         header {
@@ -390,16 +395,16 @@
                 <a href="mailto:destek@rzalabs.com" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 15px 20px; border-radius: 12px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 400px; transition: transform 0.2s, background 0.2s;">
                     <span style="font-size: 1.5rem;">📧</span>
                     <div style="text-align: left;">
-                        <div style="font-size: 0.8rem; color: var(--accent-color);">E-Posta</div>
+                        <div style="font-size: 0.8rem; color: var(--accent-color);">E-Posta Gönder</div>
                         <div style="font-size: 1rem;">destek@rzalabs.com</div>
                     </div>
                 </a>
 
-                <!-- WhatsApp Kartı (Gerçek numaranla güncellendi) -->
+                <!-- WhatsApp Kartı -->
                 <a href="https://wa.me/905323968432" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 15px 20px; border-radius: 12px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 400px; transition: transform 0.2s, background 0.2s;">
                     <span style="font-size: 1.5rem;">💬</span>
                     <div style="text-align: left;">
-                        <div style="font-size: 0.8rem; color: #2e7d32;">WhatsApp</div>
+                        <div style="font-size: 0.8rem; color: #2e7d32;">WhatsApp İle Ulaş</div>
                         <div style="font-size: 1rem;">+90 532 396 84 32</div>
                     </div>
                 </a>
@@ -443,6 +448,15 @@
     </footer>
 
     <script>
+        // Sayfa açıldığında tarayıcıyı zorla en üste sabitle (Mobilde ortadan başlama sorununu çözer)
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+        });
+        
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
         // Dropdown Menü Aç/Kapat
         function toggleMenu() {
             const menu = document.getElementById('dropdownMenu');
