@@ -26,19 +26,17 @@
     <meta name="twitter:image" content="https://rzalabs.com/og-image.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/rza.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --accent-color: #58a6ff;
-            --brand-color: #81D4FA;
-            --accent-gradient: linear-gradient(135deg, #7928CA, #FF0080);
-            --text-main: #c9d1d9;
-            --text-heading: #ffffff;
-            --border-color: #30363d;
+            --bg-color: #81D4FA;
+            --card-bg: #e1f5fe;
+            --accent-color: #0288d1;
+            --text-main: #01579b;
+            --text-heading: #002f6c;
+            --border-color: #b3e5fc;
         }
 
         * {
@@ -51,8 +49,8 @@
         body {
             background-color: var(--bg-color);
             background-image:
-                radial-gradient(circle at 15% 0%, rgba(129, 212, 250, 0.12), transparent 40%),
-                radial-gradient(circle at 85% 15%, rgba(129, 212, 250, 0.08), transparent 35%);
+                radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.3), transparent 40%),
+                radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.2), transparent 35%);
             background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
@@ -62,49 +60,34 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 10%;
+            padding: 15px 10%;
             border-bottom: 1px solid var(--border-color);
-            background: rgba(13, 17, 23, 0.8);
+            background: rgba(129, 212, 250, 0.85);
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--text-heading);
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo span {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
         .logo img {
-            height: 38px;
+            height: 45px;
             width: auto;
             display: block;
         }
 
         .footer-logo {
-            height: 28px;
+            height: 35px;
             width: auto;
-            opacity: 0.7;
             margin: 0 auto 12px;
             display: block;
         }
 
         nav a {
-            color: var(--text-main);
+            color: var(--text-heading);
             text-decoration: none;
             margin-left: 20px;
             font-size: 0.95rem;
+            font-weight: 600;
             transition: color 0.3s;
         }
 
@@ -114,7 +97,7 @@
 
         .hero {
             text-align: center;
-            padding: 100px 20px 80px;
+            padding: 80px 20px 60px;
             max-width: 900px;
             margin: 0 auto;
         }
@@ -129,20 +112,20 @@
 
         .hero p {
             font-size: 1.2rem;
-            color: #8b949e;
+            color: #0277bd;
             margin-bottom: 30px;
         }
 
         .badge {
             display: inline-block;
             padding: 6px 16px;
-            background: rgba(129, 212, 250, 0.12);
-            border: 1px solid rgba(129, 212, 250, 0.35);
-            color: var(--brand-color);
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--border-color);
+            color: var(--text-heading);
             border-radius: 20px;
             font-size: 0.85rem;
             margin-bottom: 20px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .container {
@@ -167,8 +150,9 @@
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s, border-color 0.3s;
         }
 
@@ -183,6 +167,21 @@
             margin-bottom: 15px;
         }
 
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .app-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -190,7 +189,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 47, 108, 0.5);
             justify-content: center;
             align-items: center;
             z-index: 1000;
@@ -199,36 +198,31 @@
         .modal-content {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 30px;
             max-width: 700px;
             max-height: 80vh;
             overflow-y: auto;
             color: var(--text-main);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .modal-content h2 {
+        .modal-content h2, .modal-content h4 {
             color: var(--text-heading);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
-        .modal-content h4 {
-            color: var(--text-heading);
-            margin-top: 15px;
-            margin-bottom: 5px;
-        }
-
-        .modal-content p, .modal-content ul {
+        .modal-content p {
             margin-bottom: 12px;
             font-size: 0.95rem;
         }
 
         .close-btn {
-            background: var(--accent-gradient);
+            background: var(--accent-color);
             color: #fff;
             border: none;
             padding: 8px 18px;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             margin-top: 15px;
             float: right;
@@ -240,23 +234,23 @@
             padding: 40px 20px;
             border-top: 1px solid var(--border-color);
             margin-top: 60px;
-            color: #8b949e;
+            color: #0277bd;
             font-size: 0.9rem;
         }
 
         .btn {
             display: inline-block;
-            background: var(--accent-gradient);
+            background: var(--accent-color);
             color: #fff;
             padding: 12px 28px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: opacity 0.3s;
+            transition: background 0.3s;
         }
 
         .btn:hover {
-            opacity: 0.9;
+            background: #01579b;
         }
     </style>
 </head>
@@ -264,8 +258,7 @@
 
     <header>
         <div class="logo">
-            <img src="rza-logo.png" alt="RZA Labs Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
-            <span style="display:none;">RZA <span>LABS</span></span>
+            <img src="rza.png" alt="RZA Labs Logo">
         </div>
         <nav>
             <a href="#about">Hakkımızda</a>
@@ -303,7 +296,10 @@
         <h2 class="section-title">Öne Çıkan Projeler</h2>
         <div class="grid">
             <div class="card">
-                <h3>🧩 Minik Kaşif</h3>
+                <div class="app-header">
+                    <img src="logo3.png" alt="Minik Kaşif Logo" class="app-icon">
+                    <h3>Minik Kaşif</h3>
+                </div>
                 <p>Çocuklar ve aileler için özel olarak tasarlanmış, eğitici ve eğlenceli native Android uygulaması. Kişisel veri toplamayan tam güvenli yapı.</p>
                 <br>
                 <a href="https://play.google.com/apps/testing/com.rzastudio.minikkasif" target="_blank" rel="noopener" class="btn" style="padding: 8px 18px; font-size: 0.85rem; margin-right: 10px;">▶ Play Store</a>
@@ -330,32 +326,23 @@
             <p>Minik Kaşif çocuklar ve aileler için tasarlanmıştır. Çocuklardan doğrudan kişisel bilgi toplamamaya özen gösteriyoruz. Çocukların güvenliği ve gizliliği bizim için önemlidir; uygulama, çocukları kişisel bilgilerini paylaşmaya teşvik etmez.</p>
 
             <h4>3. Reklamlar - Google AdMob</h4>
-            <p>Minik Kaşif, uygulamanın ücretsiz olarak sunulmasına yardımcı olmak amacıyla Google AdMob reklam hizmetini kullanabilir. Google AdMob, reklamların gösterilmesi ve reklam hizmetlerinin sağlanması sırasında belirli teknik bilgileri işleyebilir. Çocuklara yönelik reklam isteklerinde, kişiselleştirilmiş reklamlar ve yeniden pazarlama gibi çocuklara uygun olmayan reklam uygulamalarının kullanılmaması amaçlanmaktadır.</p>
+            <p>Minik Kaşif, uygulamanın ücretsiz olarak sunulmasına yardımcı olmak amacıyla Google AdMob reklam hizmetini kullanabilir. Çocuklara yönelik reklam isteklerinde, kişiselleştirilmiş reklamlar kullanılmamaktadır.</p>
 
             <h4>4. Analiz ve Teknik Veriler</h4>
-            <p>Uygulamanın düzgün çalışmasını sağlamak, hataları tespit etmek ve kullanıcı deneyimini geliştirmek amacıyla bazı anonim veya toplu teknik veriler kullanılabilir.</p>
+            <p>Uygulamanın düzgün çalışmasını sağlamak, hataları tespit etmek ve kullanıcı deneyimini geliştirmek amacıyla bazı anonim teknik veriler kullanılabilir.</p>
 
             <h4>5. Üçüncü Taraf Hizmetleri</h4>
-            <p>Minik Kaşif, uygulamanın çalışması için Google Play Services ve Google AdMob gibi üçüncü taraf hizmetlerden yararlanabilir. Bu hizmetlerin kendi gizlilik politikaları ve veri işleme uygulamaları bulunmaktadır.</p>
+            <p>Google Play Services ve Google AdMob gibi hizmetlerden yararlanılabilir.</p>
 
-            <h4>6. Veri Güvenliği</h4>
-            <p>Kullanıcıların gizliliğini ve güvenliğini korumak için makul teknik ve idari önlemler alınmaktadır.</p>
-
-            <h4>7. Ebeveynler ve Yasal Vasiler</h4>
-            <p>Ebeveynler veya yasal vasiler, Minik Kaşif'in gizlilik uygulamaları hakkında herhangi bir soru veya endişeye sahip olmaları durumunda bizimle iletişime geçebilir.</p>
-
-            <h4>8. Gizlilik Politikasındaki Değişiklikler</h4>
-            <p>Bu Gizlilik Politikası gerektiğinde güncellenebilir. Güncellemeler bu sayfada yayınlanır ve son güncelleme tarihi değiştirilir.</p>
-
-            <h4>9. İletişim</h4>
-            <p>Minik Kaşif'in gizlilik politikası, kişisel verilerin kullanımı veya uygulama hakkında sorularınız varsa bizimle iletişime geçebilirsiniz:<br><strong>E-posta:</strong> destek@RZAlabs.com</p>
+            <h4>6. İletişim</h4>
+            <p>Sorularınız için bizimle iletişime geçebilirsiniz:<br><strong>E-posta:</strong> destek@RZAlabs.com</p>
 
             <button class="close-btn" onclick="closePrivacy()">Kapat</button>
         </div>
     </div>
 
     <footer>
-        <img src="rza-logo.png" alt="RZA Labs Logo" class="footer-logo" onerror="this.style.display='none';">
+        <img src="rza.png" alt="RZA Labs Logo" class="footer-logo">
         <p>&copy; 2026 RZA Labs. Tüm hakları saklıdır.</p>
     </footer>
 
