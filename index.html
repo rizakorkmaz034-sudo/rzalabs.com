@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RZA Labs | Innovative Software & Mobile Solutions</title>
+
+    <!-- SEO -->
+    <meta name="description" content="RZA Labs; Kotlin ve Jetpack Compose ile native Android uygulamaları, modern web platformları geliştiren yazılım stüdyosu.">
+    <meta name="keywords" content="android geliştirme, kotlin, jetpack compose, mobil uygulama, RZA Labs">
+    <meta name="author" content="RZA Labs">
+    <link rel="canonical" href="https://rzalabs.com">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="RZA Labs | Innovative Software & Mobile Solutions">
+    <meta property="og:description" content="Yüksek performanslı native Android uygulamaları ve modern web çözümleri.">
+    <meta property="og:image" content="https://rzalabs.com/og-image.png">
+    <meta property="og:url" content="https://rzalabs.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RZA Labs">
+    <meta name="twitter:description" content="Native Android ve web geliştirme stüdyosu.">
+    <meta name="twitter:image" content="https://rzalabs.com/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --accent-color: #58a6ff;
+            --brand-color: #81D4FA;
+            --accent-gradient: linear-gradient(135deg, #7928CA, #FF0080);
+            --text-main: #c9d1d9;
+            --text-heading: #ffffff;
+            --border-color: #30363d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image:
+                radial-gradient(circle at 15% 0%, rgba(129, 212, 250, 0.12), transparent 40%),
+                radial-gradient(circle at 85% 15%, rgba(129, 212, 250, 0.08), transparent 35%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo img {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+
+        .footer-logo {
+            height: 28px;
+            width: auto;
+            opacity: 0.7;
+            margin: 0 auto 12px;
+            display: block;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px 80px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #8b949e;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(129, 212, 250, 0.12);
+            border: 1px solid rgba(129, 212, 250, 0.35);
+            color: var(--brand-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--text-heading);
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card h3 {
+            color: var(--text-heading);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            color: var(--text-main);
+        }
+
+        .modal-content h2 {
+            color: var(--text-heading);
+            margin-bottom: 15px;
+        }
+
+        .modal-content h4 {
+            color: var(--text-heading);
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .modal-content p, .modal-content ul {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .close-btn {
+            background: var(--accent-gradient);
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+            float: right;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-gradient);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="rza-logo.png" alt="RZA Labs Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+            <span style="display:none;">RZA <span>LABS</span></span>
+        </div>
+        <nav>
+            <a href="#about">Hakkımızda</a>
+            <a href="#projects">Projeler</a>
+            <a href="javascript:void(0)" onclick="openPrivacy()">Minik Kaşif Gizlilik</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="badge">🚀 Geleceğin Mobil & Yazılım Teknolojileri</div>
+        <h1>Yenilikçi Yazılım ve Akıllı Mobil Çözümler</h1>
+        <p>RZA Labs; yüksek performanslı native Android uygulamaları, modern web platformları ve kullanıcı odaklı dijital deneyimler geliştirir.</p>
+        <a href="#projects" class="btn">Projelerimizi Keşfet</a>
+    </section>
+
+    <div class="container" id="about">
+        <h2 class="section-title">Neler Yapıyoruz?</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>📱 Native Android Geliştirme</h3>
+                <p>Kotlin, Jetpack Compose ve modern mimari kalıpları kullanarak yüksek performanslı, akıcı ve güvenli mobil uygulamalar inşa ediyoruz.</p>
+            </div>
+            <div class="card">
+                <h3>⚡ Modern Web Teknolojileri</h3>
+                <p>Vercel, Cloud mimarileri ve ışık hızında çalışan web altyapıları ile markanızı dijital dünyada en üst sıraya taşıyoruz.</p>
+            </div>
+            <div class="card">
+                <h3>🛡️ Çocuk & Aile Dostu Yazılımlar</h3>
+                <p>Gizliliğe önem veren, güvenli, eğitici ve eğlenceli çocuk uygulamalarıyla geleceğin kaşiflerine güvenli dijital alanlar sunuyoruz.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="projects">
+        <h2 class="section-title">Öne Çıkan Projeler</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🧩 Minik Kaşif</h3>
+                <p>Çocuklar ve aileler için özel olarak tasarlanmış, eğitici ve eğlenceli native Android uygulaması. Kişisel veri toplamayan tam güvenli yapı.</p>
+                <br>
+                <a href="https://play.google.com/apps/testing/com.rzastudio.minikkasif" target="_blank" rel="noopener" class="btn" style="padding: 8px 18px; font-size: 0.85rem; margin-right: 10px;">▶ Play Store</a>
+                <a href="javascript:void(0)" onclick="openPrivacy()" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.9rem;">Gizlilik Politikasını Oku &rarr;</a>
+            </div>
+            <div class="card">
+                <span class="badge" style="margin-bottom: 15px;">🔜 Yakında</span>
+                <h3>📻 Radyofil</h3>
+                <p>Türkiye'nin dört bir yanından radyo istasyonlarını tek bir uygulamadan dinlemenizi sağlayan basit ve akıcı bir radyo yayın uygulaması.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal" id="privacyModal" onclick="if(event.target === this) closePrivacy()">
+        <div class="modal-content">
+            <h2>🔒 Minik Kaşif Gizlilik Politikası</h2>
+            <p><strong>Önemli:</strong> Minik Kaşif, çocuklar ve aileler için tasarlanmıştır. Kullanıcılardan gereksiz kişisel bilgiler talep etmez ve çocukların gizliliğine öncelik verir.</p>
+            
+            <h4>1. Toplanan Bilgiler</h4>
+            <p>Minik Kaşif, uygulamanın temel özelliklerini kullanabilmeniz için ad, soyad, telefon numarası veya adres gibi doğrudan kişisel bilgileri istemez. Uygulama içerisinde kullanıcı hesabı oluşturulması zorunlu değildir.</p>
+
+            <h4>2. Çocukların Gizliliği</h4>
+            <p>Minik Kaşif çocuklar ve aileler için tasarlanmıştır. Çocuklardan doğrudan kişisel bilgi toplamamaya özen gösteriyoruz. Çocukların güvenliği ve gizliliği bizim için önemlidir; uygulama, çocukları kişisel bilgilerini paylaşmaya teşvik etmez.</p>
+
+            <h4>3. Reklamlar - Google AdMob</h4>
+            <p>Minik Kaşif, uygulamanın ücretsiz olarak sunulmasına yardımcı olmak amacıyla Google AdMob reklam hizmetini kullanabilir. Google AdMob, reklamların gösterilmesi ve reklam hizmetlerinin sağlanması sırasında belirli teknik bilgileri işleyebilir. Çocuklara yönelik reklam isteklerinde, kişiselleştirilmiş reklamlar ve yeniden pazarlama gibi çocuklara uygun olmayan reklam uygulamalarının kullanılmaması amaçlanmaktadır.</p>
+
+            <h4>4. Analiz ve Teknik Veriler</h4>
+            <p>Uygulamanın düzgün çalışmasını sağlamak, hataları tespit etmek ve kullanıcı deneyimini geliştirmek amacıyla bazı anonim veya toplu teknik veriler kullanılabilir.</p>
+
+            <h4>5. Üçüncü Taraf Hizmetleri</h4>
+            <p>Minik Kaşif, uygulamanın çalışması için Google Play Services ve Google AdMob gibi üçüncü taraf hizmetlerden yararlanabilir. Bu hizmetlerin kendi gizlilik politikaları ve veri işleme uygulamaları bulunmaktadır.</p>
+
+            <h4>6. Veri Güvenliği</h4>
+            <p>Kullanıcıların gizliliğini ve güvenliğini korumak için makul teknik ve idari önlemler alınmaktadır.</p>
+
+            <h4>7. Ebeveynler ve Yasal Vasiler</h4>
+            <p>Ebeveynler veya yasal vasiler, Minik Kaşif'in gizlilik uygulamaları hakkında herhangi bir soru veya endişeye sahip olmaları durumunda bizimle iletişime geçebilir.</p>
+
+            <h4>8. Gizlilik Politikasındaki Değişiklikler</h4>
+            <p>Bu Gizlilik Politikası gerektiğinde güncellenebilir. Güncellemeler bu sayfada yayınlanır ve son güncelleme tarihi değiştirilir.</p>
+
+            <h4>9. İletişim</h4>
+            <p>Minik Kaşif'in gizlilik politikası, kişisel verilerin kullanımı veya uygulama hakkında sorularınız varsa bizimle iletişime geçebilirsiniz:<br><strong>E-posta:</strong> destek@RZAlabs.com</p>
+
+            <button class="close-btn" onclick="closePrivacy()">Kapat</button>
+        </div>
+    </div>
+
+    <footer>
+        <img src="rza-logo.png" alt="RZA Labs Logo" class="footer-logo" onerror="this.style.display='none';">
+        <p>&copy; 2026 RZA Labs. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        function openPrivacy() {
+            document.getElementById('privacyModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closePrivacy() {
+            document.getElementById('privacyModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closePrivacy();
+        });
+    </script>
+</body>
+</html>
