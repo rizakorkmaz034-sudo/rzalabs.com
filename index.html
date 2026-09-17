@@ -7,7 +7,7 @@
 
     <!-- SEO -->
     <meta name="description" content="RZA Labs; Kotlin ve Jetpack Compose ile native iOS ve Android uygulamaları, modern web platformları geliştiren yazılım stüdyosu.">
-    <meta name="keywords" content=" iOS ve android  geliştirme, kotlin, jetpack compose, mobil uygulama, RZA Labs">
+    <meta name="keywords" content="iOS ve android geliştirme, kotlin, jetpack compose, mobil uygulama, RZA Labs">
     <meta name="author" content="RZA Labs">
     <link rel="canonical" href="https://rzalabs.com">
 
@@ -22,7 +22,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="RZA Labs">
-    <meta name="twitter:description" content="Native iOS,Android ve web geliştirme stüdyosu.">
+    <meta name="twitter:description" content="Native iOS, Android ve web geliştirme stüdyosu.">
     <meta name="twitter:image" content="https://rzalabs.com/og-image.png">
 
     <!-- Favicon -->
@@ -88,68 +88,23 @@
             display: block;
         }
 
-        /* Menü Butonu ve Dropdown Stilleri */
-        .menu-container {
-            position: relative;
-        }
-
-        .menu-btn {
-            background: var(--card-bg);
-            color: var(--text-heading);
-            border: 1px solid var(--border-color);
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
+        /* Navigasyon Linkleri (Yan Yana) */
+        .nav-links {
             display: flex;
+            gap: 20px;
             align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
-        .menu-btn:hover {
-            border-color: var(--accent-color);
-            background: #fff;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            right: 0;
-            top: calc(100% + 8px);
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            min-width: 160px;
-            overflow: hidden;
-            z-index: 101;
-        }
-
-        .dropdown-menu.show {
-            display: block;
-        }
-
-        .dropdown-menu a {
-            display: block;
+        .nav-links a {
             color: var(--text-heading);
             text-decoration: none;
-            padding: 12px 18px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 600;
-            transition: background 0.2s, color 0.2s;
-            border-bottom: 1px solid rgba(179, 229, 252, 0.5);
+            transition: color 0.2s;
             cursor: pointer;
         }
 
-        .dropdown-menu a:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-menu a:hover {
-            background: var(--accent-color);
+        .nav-links a:hover {
             color: #fff;
         }
 
@@ -323,16 +278,11 @@
         <div class="logo">
             <img src="rza.png" alt="RZA Labs Logo">
         </div>
-        <div class="menu-container">
-            <button class="menu-btn" onclick="toggleMenu()">
-                Menü <span>&#9662;</span>
-            </button>
-            <div class="dropdown-menu" id="dropdownMenu">
-                <a href="#about" onclick="toggleMenu()">Hakkımızda</a>
-                <a href="#projects" onclick="toggleMenu()">Projeler</a>
-                <a onclick="openContact(); toggleMenu()">İletişim</a>
-            </div>
-        </div>
+        <nav class="nav-links">
+            <a href="#about">Hakkımızda</a>
+            <a href="#projects">Projeler</a>
+            <a onclick="openContact()">İletişim</a>
+        </nav>
     </header>
 
     <section class="hero">
@@ -383,7 +333,7 @@
         </div>
     </div>
 
-    <!-- Bize Ulaşın Modal (Ortada Açılır, Arka Plan Flu) -->
+    <!-- Bize Ulaşın Modal -->
     <div class="modal" id="contactModal" onclick="if(event.target === this) closeContact()">
         <div class="modal-content" style="text-align: center;">
             <h2>Bize Ulaşın</h2>
@@ -447,7 +397,7 @@
     </footer>
 
     <script>
-        // Sayfa açıldığında tarayıcıyı zorla en üste sabitle (Mobilde ortadan başlama sorununu çözer)
+        // Sayfa açıldığında tarayıcıyı zorla en üste sabitle
         window.addEventListener('load', function() {
             window.scrollTo(0, 0);
         });
@@ -455,21 +405,6 @@
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
-
-        // Dropdown Menü Aç/Kapat
-        function toggleMenu() {
-            const menu = document.getElementById('dropdownMenu');
-            menu.classList.toggle('show');
-        }
-
-        // Sayfada başka bir yere tıklandığında menüyü kapat
-        window.addEventListener('click', function(e) {
-            const container = document.querySelector('.menu-container');
-            const menu = document.getElementById('dropdownMenu');
-            if (!container.contains(e.target) && menu.classList.contains('show')) {
-                menu.classList.remove('show');
-            }
-        });
 
         // Bize Ulaşın Modal Kontrolleri
         function openContact() {
@@ -496,7 +431,6 @@
             if (e.key === 'Escape') {
                 closeContact();
                 closePrivacy();
-                document.getElementById('dropdownMenu').classList.remove('show');
             }
         });
     </script>
