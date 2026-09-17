@@ -13,7 +13,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="RZA Labs | Innovative Software & Mobile Solutions">
-    <meta property="og:description" content="Yüksek performanslı native iOS ve Android uygulamaları ve modern web çözümleri.">
+    <meta property="og:description" content="Yüksek performanslı native iOS e Android uygulamaları ve modern web çözümleri.">
     <meta property="og:image" content="https://rzalabs.com/og-image.png">
     <meta property="og:url" content="https://rzalabs.com">
     <meta property="og:type" content="website">
@@ -195,7 +195,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        /* Ortak Modal dan Flu Arka Plan Stilleri */
+        /* Modal Stilleri */
         .modal {
             display: none;
             position: fixed;
@@ -256,19 +256,29 @@
             font-size: 0.9rem;
         }
 
-        .btn {
-            display: inline-block;
-            background: var(--accent-color);
-            color: #fff;
-            padding: 12px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #01579b;
+        /* Mobil Uyum Düzenlemeleri */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 4%;
+            }
+            .logo img {
+                height: 42px;
+            }
+            .nav-links {
+                gap: 12px;
+            }
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+            .hero {
+                padding: 50px 15px 40px;
+            }
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -320,7 +330,7 @@
                 <p>Çocukların keşfederek öğrenmesi için tasarlanmış eğitici ve eğlenceli bir uygulama. Hayvanlar, meyveler, harfler, sayılar, renkler ve şekiller gibi temel konuları keşfederken boyama etkinlikleriyle öğrenmelerini eğlenceli bir deneyime dönüştürür.</p>
                 <div style="margin-top: 20px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
                     <a href="https://play.google.com/apps/testing/com.rzastudio.minikkasif" target="_blank" rel="noopener">
-                        <img src="play.webp" alt="Google Play'den İndirin" style="width: 180px; height: auto;">
+                        <img src="play.webp" alt="Google Play'den İndirin" style="width: 160px; height: auto;">
                     </a>
                     <a href="javascript:void(0)" onclick="openPrivacy()" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.9rem;">Gizlilik Politikasını Oku &rarr;</a>
                 </div>
@@ -337,24 +347,24 @@
     <div class="modal" id="contactModal" onclick="if(event.target === this) closeContact()">
         <div class="modal-content" style="text-align: center;">
             <h2>Bize Ulaşın</h2>
-            <p style="margin-bottom: 25px;">Sorularınız, önerileriniz, proje fikirleriniz, teknik destek talepleriniz veya iş birliği önerileriniz için bizimle iletişime geçebilirsiniz.</p>
+            <p style="margin-bottom: 25px;">Sorularınız, önerileriniz, proje fikirleriniz veya iş birliği talepleriniz için bizimle iletişime geçebilirsiniz.</p>
             
             <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
                 <!-- E-posta Kartı -->
-                <a href="mailto:destek@rzalabs.com" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 15px 20px; border-radius: 12px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 400px; transition: transform 0.2s, background 0.2s;">
+                <a href="mailto:destek@rzalabs.com" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 15px 20px; border-radius: 12px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 400px; transition: transform 0.2s;">
                     <img src="mail.png" alt="Mail" class="app-icon" style="width: 36px; height: 36px; border-radius: 8px; mix-blend-mode: multiply;">
                     <div style="text-align: left;">
                         <div style="font-size: 0.8rem; color: var(--accent-color);">E-Posta</div>
-                        <div style="font-size: 1rem;">destek@rzalabs.com</div>
+                        <div style="font-size: 0.95rem;">destek@rzalabs.com</div>
                     </div>
                 </a>
 
                 <!-- WhatsApp Kartı -->
-                <a href="https://wa.me/905323968432" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 15px 20px; border-radius: 12px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 400px; transition: transform 0.2s, background 0.2s;">
+                <a href="https://wa.me/905323968432" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 15px 20px; border-radius: 12px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 400px; transition: transform 0.2s;">
                     <img src="whatsap.png" alt="WhatsApp" class="app-icon" style="width: 36px; height: 36px; border-radius: 8px; mix-blend-mode: multiply;">
                     <div style="text-align: left;">
                         <div style="font-size: 0.8rem; color: #2e7d32;">WhatsApp</div>
-                        <div style="font-size: 1rem;">+90 532 396 84 32</div>
+                        <div style="font-size: 0.95rem;">+90 532 396 84 32</div>
                     </div>
                 </a>
             </div>
@@ -367,25 +377,19 @@
     <div class="modal" id="privacyModal" onclick="if(event.target === this) closePrivacy()">
         <div class="modal-content">
             <h2>Minik Kaşif Gizlilik Politikası</h2>
-            <p><strong>Önemli:</strong> Minik Kaşif, çocuklar ve aileler için tasarlanmıştır. Kullanıcılardan gereksiz kişisel bilgiler talep etmez ve çocukların gizliliğine öncelik verir.</p>
+            <p><strong>Önemli:</strong> Minik Kaşif, çocuklar ve aileler için tasarlanmıştır. Kullanıcılardan gereksiz kişisel bilgiler talep etmez.</p>
             
             <h4>1. Toplanan Bilgiler</h4>
-            <p>Minik Kaşif, uygulamanın temel özelliklerini kullanabilmeniz için ad, soyad, telefon numarası veya adres gibi doğrudan kişisel bilgileri istemez. Uygulama içerisinde kullanıcı hesabı oluşturulması zorunlu değildir.</p>
+            <p>Minik Kaşif, uygulamanın temel özelliklerini kullanabilmeniz için ad, soyad veya telefon numarası gibi doğrudan kişisel bilgileri istemez.</p>
 
             <h4>2. Çocukların Gizliliği</h4>
-            <p>Minik Kaşif çocuklar ve aileler için tasarlanmıştır. Çocuklardan doğrudan kişisel bilgi toplamamaya özen gösteriyoruz. Çocukların güvenliği ve gizliliği bizim için önemlidir; uygulama, çocukları kişisel bilgilerini paylaşmaya teşvik etmez.</p>
+            <p>Minik Kaşif çocuklar ve aileler için tasarlanmıştır. Çocuklardan doğrudan kişisel bilgi toplamamaya özen gösteriyoruz.</p>
 
             <h4>3. Reklamlar - Google AdMob</h4>
-            <p>Minik Kaşif, uygulamanın ücretsiz olarak sunulmasına yardımcı olmak amacıyla Google AdMob reklam hizmetini kullanabilir. Çocuklara yönelik reklam isteklerinde, kişiselleştirilmiş reklamlar kullanılmamaktadır.</p>
+            <p>Minik Kaşif, uygulamanın ücretsiz sunulabilmesi için Google AdMob reklam hizmetini kullanabilir. Çocuklara yönelik reklamlarda kişiselleştirme yapılmaz.</p>
 
-            <h4>4. Analiz ve Teknik Veriler</h4>
-            <p>Uygulamanın düzgün çalışmasını sağlamak, hataları tespit etmek ve kullanıcı deneyimini geliştirmek amacıyla bazı anonim teknik veriler kullanılabilir.</p>
-
-            <h4>5. Üçüncü Taraf Hizmetleri</h4>
-            <p>Google Play Services ve Google AdMob gibi hizmetlerden yararlanılabilir.</p>
-
-            <h4>6. İletişim</h4>
-            <p>Sorularınız için bizimle iletişime geçebilirsiniz:<br><strong>E-posta:</strong> destek@rzalabs.com</p>
+            <h4>4. İletişim</h4>
+            <p>Sorularınız için:<br><strong>E-posta:</strong> destek@rzalabs.com</p>
 
             <button class="close-btn" onclick="closePrivacy()">Kapat</button>
         </div>
@@ -397,7 +401,6 @@
     </footer>
 
     <script>
-        // Sayfa açıldığında tarayıcıyı zorla en üste sabitle
         window.addEventListener('load', function() {
             window.scrollTo(0, 0);
         });
@@ -406,7 +409,6 @@
             history.scrollRestoration = 'manual';
         }
 
-        // Bize Ulaşın Modal Kontrolleri
         function openContact() {
             document.getElementById('contactModal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
@@ -416,7 +418,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Gizlilik Politikası Modal Kontrolleri
         function openPrivacy() {
             document.getElementById('privacyModal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
@@ -426,7 +427,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // ESC tuşuna basınca pencereleri kapat
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeContact();
