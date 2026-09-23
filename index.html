@@ -195,7 +195,24 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        /* İletişim Modal İkon Stili (Web için Ok Gibi Büyük: 70px) */
+        /* İletişim Kartları Stili */
+        .contact-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255,255,255,0.8);
+            border: 1px solid var(--border-color);
+            padding: 18px 24px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--text-heading);
+            font-weight: 600;
+            width: 100%;
+            max-width: 440px;
+            transition: transform 0.2s;
+        }
+
+        /* İletişim Modal İkon Stili (Web: 70px) */
         .contact-icon {
             width: 70px;
             height: 70px;
@@ -289,10 +306,14 @@
             .hero p {
                 font-size: 1rem;
             }
-            /* Mobilde ekran taşmasın diye dengeli boyut (48px) */
+            .contact-card {
+                padding: 12px 16px;
+                gap: 10px;
+            }
+            /* Mobilde ikonlar sağ tarafta rahat dursun diye 42px */
             .contact-icon {
-                width: 48px;
-                height: 48px;
+                width: 42px;
+                height: 42px;
             }
         }
     </style>
@@ -366,21 +387,21 @@
             
             <div style="display: flex; flex-direction: column; gap: 18px; align-items: center;">
                 <!-- E-posta Kartı -->
-                <a href="mailto:destek@rzalabs.com" style="display: flex; align-items: center; gap: 18px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 18px 24px; border-radius: 14px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 440px; transition: transform 0.2s;">
-                    <img src="mail.png" alt="Mail" class="contact-icon">
-                    <div style="text-align: left;">
+                <a href="mailto:destek@rzalabs.com" class="contact-card">
+                    <div style="text-align: left; word-break: break-word;">
                         <div style="font-size: 0.85rem; color: var(--accent-color); margin-bottom: 2px;">E-Posta</div>
-                        <div style="font-size: 1.05rem;">destek@rzalabs.com</div>
+                        <div style="font-size: 1rem;">destek@rzalabs.com</div>
                     </div>
+                    <img src="mail.png" alt="Mail" class="contact-icon">
                 </a>
 
                 <!-- WhatsApp Kartı -->
-                <a href="https://wa.me/905323968432" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 18px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 18px 24px; border-radius: 14px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 440px; transition: transform 0.2s;">
-                    <img src="whatsap.png" alt="WhatsApp" class="contact-icon">
-                    <div style="text-align: left;">
+                <a href="https://wa.me/905323968432" target="_blank" rel="noopener" class="contact-card">
+                    <div style="text-align: left; word-break: break-word;">
                         <div style="font-size: 0.85rem; color: #2e7d32; margin-bottom: 2px;">WhatsApp</div>
-                        <div style="font-size: 1.05rem;">+90 532 396 84 32</div>
+                        <div style="font-size: 1rem;">+90 532 396 84 32</div>
                     </div>
+                    <img src="whatsap.png" alt="WhatsApp" class="contact-icon">
                 </a>
             </div>
 
