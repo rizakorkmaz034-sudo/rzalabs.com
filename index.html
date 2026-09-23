@@ -195,13 +195,14 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        /* İletişim Modal İkon Stili (Web için %30 Büyük: 47px) */
+        /* İletişim Modal İkon Stili (Web için Ok Gibi Büyük: 70px) */
         .contact-icon {
-            width: 47px;
-            height: 47px;
-            border-radius: 8px;
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
             mix-blend-mode: multiply;
             object-fit: contain;
+            flex-shrink: 0;
         }
 
         /* Modal Stilleri */
@@ -288,10 +289,10 @@
             .hero p {
                 font-size: 1rem;
             }
-            /* Mobilde ikonlar normal boyutuna (36px) döner */
+            /* Mobilde ekran taşmasın diye dengeli boyut (48px) */
             .contact-icon {
-                width: 36px;
-                height: 36px;
+                width: 48px;
+                height: 48px;
             }
         }
     </style>
@@ -363,22 +364,22 @@
             <h2>Bize Ulaşın</h2>
             <p style="margin-bottom: 25px;">Sorularınız, önerileriniz, proje fikirleriniz veya iş birliği talepleriniz için bizimle iletişime geçebilirsiniz.</p>
             
-            <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
+            <div style="display: flex; flex-direction: column; gap: 18px; align-items: center;">
                 <!-- E-posta Kartı -->
-                <a href="mailto:destek@rzalabs.com" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 15px 20px; border-radius: 12px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 400px; transition: transform 0.2s;">
+                <a href="mailto:destek@rzalabs.com" style="display: flex; align-items: center; gap: 18px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 18px 24px; border-radius: 14px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 440px; transition: transform 0.2s;">
                     <img src="mail.png" alt="Mail" class="contact-icon">
                     <div style="text-align: left;">
-                        <div style="font-size: 0.8rem; color: var(--accent-color);">E-Posta</div>
-                        <div style="font-size: 0.95rem;">destek@rzalabs.com</div>
+                        <div style="font-size: 0.85rem; color: var(--accent-color); margin-bottom: 2px;">E-Posta</div>
+                        <div style="font-size: 1.05rem;">destek@rzalabs.com</div>
                     </div>
                 </a>
 
                 <!-- WhatsApp Kartı -->
-                <a href="https://wa.me/905323968432" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 15px 20px; border-radius: 12px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 400px; transition: transform 0.2s;">
+                <a href="https://wa.me/905323968432" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 18px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 18px 24px; border-radius: 14px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 440px; transition: transform 0.2s;">
                     <img src="whatsap.png" alt="WhatsApp" class="contact-icon">
                     <div style="text-align: left;">
-                        <div style="font-size: 0.8rem; color: #2e7d32;">WhatsApp</div>
-                        <div style="font-size: 0.95rem;">+90 532 396 84 32</div>
+                        <div style="font-size: 0.85rem; color: #2e7d32; margin-bottom: 2px;">WhatsApp</div>
+                        <div style="font-size: 1.05rem;">+90 532 396 84 32</div>
                     </div>
                 </a>
             </div>
