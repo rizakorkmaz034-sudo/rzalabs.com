@@ -195,6 +195,15 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
+        /* İletişim Modal İkon Stili (Web için %30 Büyük: 47px) */
+        .contact-icon {
+            width: 47px;
+            height: 47px;
+            border-radius: 8px;
+            mix-blend-mode: multiply;
+            object-fit: contain;
+        }
+
         /* Modal Stilleri */
         .modal {
             display: none;
@@ -279,6 +288,11 @@
             .hero p {
                 font-size: 1rem;
             }
+            /* Mobilde ikonlar normal boyutuna (36px) döner */
+            .contact-icon {
+                width: 36px;
+                height: 36px;
+            }
         }
     </style>
 </head>
@@ -352,7 +366,7 @@
             <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
                 <!-- E-posta Kartı -->
                 <a href="mailto:destek@rzalabs.com" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 15px 20px; border-radius: 12px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 400px; transition: transform 0.2s;">
-                    <img src="mail.png" alt="Mail" class="app-icon" style="width: 36px; height: 36px; border-radius: 8px; mix-blend-mode: multiply;">
+                    <img src="mail.png" alt="Mail" class="contact-icon">
                     <div style="text-align: left;">
                         <div style="font-size: 0.8rem; color: var(--accent-color);">E-Posta</div>
                         <div style="font-size: 0.95rem;">destek@rzalabs.com</div>
@@ -361,7 +375,7 @@
 
                 <!-- WhatsApp Kartı -->
                 <a href="https://wa.me/905323968432" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.8); border: 1px solid var(--border-color); padding: 15px 20px; border-radius: 12px; text-decoration: none; color: var(--text-heading); font-weight: 600; width: 100%; max-width: 400px; transition: transform 0.2s;">
-                    <img src="whatsap.png" alt="WhatsApp" class="app-icon" style="width: 36px; height: 36px; border-radius: 8px; mix-blend-mode: multiply;">
+                    <img src="whatsap.png" alt="WhatsApp" class="contact-icon">
                     <div style="text-align: left;">
                         <div style="font-size: 0.8rem; color: #2e7d32;">WhatsApp</div>
                         <div style="font-size: 0.95rem;">+90 532 396 84 32</div>
